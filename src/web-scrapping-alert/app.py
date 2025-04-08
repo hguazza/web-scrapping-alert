@@ -63,18 +63,42 @@ def save_to_database(conn, data):
      df.to_sql('prices', conn, if_exists='append', index=False)
 
 
+def get_min_price(conn):
+    """
+    Retrieves the minimum price from the database.
+    """
+    cursor = conn.cursor()
+    cursor.execute('SELECT MIN(new_price), timestamp FROM prices')
+    result = cursor.fetchone()
+    if result[0] and result[1] is not None:
+        return result[0], result[1]
+    return None, None
+
 if __name__ == "__main__":
 
     url = "https://www.mercadolivre.com.br/macbook-air-m2-2022-midnight-16gb-de-ram-256gb-ssd-apple-m/p/MLB29578461#polycard_client=search-nordic&searchVariation=MLB29578461&wid=MLB4020634589&position=4&search_layout=grid&type=product&tracking_id=64fa67f8-9370-40ec-8bda-f0f673393914&sid=search"
-    df = pd.DataFrame()
 
+    # setting up the database
     conn = create_connection()
     setup_database(conn)
 
     while True:
+        # Fetching and parsing the page
         page_content = fetch_page(url)
         product_info = parse_page(page_content)
+        current_price = product_info['new_price']
+        # get minimun price and its timestamp from the database
+        min_price, min_price_timestamp = get_min_price(conn)
 
+        # Program logic -> check if there is new lowest price
+        if min_price is None or current_price < min_price:
+            print(f"Lowest price found: {current_price} at {product_info['timestamp']}")
+            min_price = current_price
+            min_price_timestamp = product_info['timestamp']
+        else:
+            print(f"Current price: {current_price} - No new lowest price found.")
+
+        # Saving product information to sqlite database
         save_to_database(conn, product_info)
         print("Dados salvos no banco:", product_info)
 
