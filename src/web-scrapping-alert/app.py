@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
 import time
+import pandas as pd
+
 
 def fetch_page(url):
     response = requests.get(url)
@@ -28,11 +30,22 @@ def parse_page(html):
         'timestamp': timestamp
     }
 
-
+def save_to_dataframe(product_info, df):
+    """
+    Saves the product information to a DataFrame and returns it.
+    """
+    new_row = pd.DataFrame([product_info])
+    df = pd.concat([df, new_row], ignore_index=True)
+    return df
 
 if __name__ == "__main__":
+
     url = "https://www.mercadolivre.com.br/macbook-air-m2-2022-midnight-16gb-de-ram-256gb-ssd-apple-m/p/MLB29578461#polycard_client=search-nordic&searchVariation=MLB29578461&wid=MLB4020634589&position=4&search_layout=grid&type=product&tracking_id=64fa67f8-9370-40ec-8bda-f0f673393914&sid=search"
-    page_content = fetch_page(url)
-    product_info = parse_page(page_content)
-    print(product_info)
-    time.sleep(10)
+    df = pd.DataFrame()
+
+    while True:
+        page_content = fetch_page(url)
+        product_info = parse_page(page_content)
+        df = save_to_dataframe(product_info, df)
+        print(df)
+        time.sleep(10)
