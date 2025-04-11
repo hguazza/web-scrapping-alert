@@ -45,7 +45,7 @@ This guide will walk you through the steps to set up and replicate this project 
 3.  **Clone the Repository:** Clone your project repository from GitHub to your local machine:
 
     ```bash
-    git clone <your_repository_url>
+    git clone https://github.com/hguazza/web-scrapping-alert.git
     cd <your_project_directory>
     ```
 
