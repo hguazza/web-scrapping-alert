@@ -4,10 +4,6 @@ https://github.com/python-poetry/poetry-plugin-export
 
 
 
-
-
-
-
 # Web Scrapping Alert
 
 ## Getting Started
@@ -19,7 +15,6 @@ This guide will walk you through the steps to set up and replicate this project 
 Before you begin, ensure you have the following installed:
 
 * **Python 3.6:** Make sure you have a compatible Python 3 version installed on your system. You can check your Python version by running `python --version` or `python3 --version` in your terminal.
-* **Git:** You'll need Git to clone the project repository. You can download it from [https://git-scm.com/downloads](https://git-scm.com/downloads).
 
 ## Libraries Used and Explanation
 
