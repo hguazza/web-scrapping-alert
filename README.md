@@ -119,15 +119,3 @@ This guide will walk you through the steps to set up and replicate this project 
     If you don't have a `requirements.txt` file, you'll need to manually install the required packages using `pip install <package_name>`. Make sure to list all the necessary dependencies in your README if you don't provide a `requirements.txt` file.
 
 5.  **Run the Project:** With the dependencies installed and the virtual environment active, you can now run your project according to its instructions (e.g., `python main.py`, `streamlit run app.py`, etc.). Refer to the specific instructions in your README or project documentation.
-
-## Contributing
-
-[Explain how others can contribute to your project. This might include guidelines for submitting pull requests, reporting issues, etc.]
-
-## License
-
-[Specify the license under which your project is distributed. If you included a license badge at the top, make sure the `LICENSE` file exists in your repository.]
-
-## Acknowledgements
-
-[Optional: Mention any libraries, frameworks, or individuals that helped in the development of your project.]
