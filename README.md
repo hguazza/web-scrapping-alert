@@ -12,7 +12,7 @@ https://github.com/python-poetry/poetry-plugin-export
 
 ## Getting Started
 
-This guide will walk you through the steps to set up and run this project on your local machine and deploy it on AWS with Docker. You can choose to manage the project dependencies using either [Poetry](https://python-poetry.org/) or [pip](https://pypi.org/project/pip/).
+This guide will walk you through the steps to set up and replicate this project on your local machine and deploy it on AWS with Docker. You can choose to manage the project dependencies using either [Poetry](https://python-poetry.org/) or [pip](https://pypi.org/project/pip/).
 
 ### Prerequisites
 
