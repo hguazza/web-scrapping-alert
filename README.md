@@ -12,8 +12,6 @@ This guide will walk you through the steps to set up and replicate this project 
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
-
 * **Python 3.6:** Make sure you have a compatible Python 3 version installed on your system. You can check your Python version by running `python --version` or `python3 --version` in your terminal.
 
 ## Libraries Used and Explanation
