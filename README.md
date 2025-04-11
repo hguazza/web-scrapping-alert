@@ -33,18 +33,18 @@ Before you begin, ensure you have the following installed:
 1.  **Install Poetry:** If you don't have Poetry installed, you can install it by running the following command in your terminal:
 
     ```bash
-    curl -sSL [https://install.python-poetry.org](https://install.python-poetry.org) | python3 -
+    pip install poetry
     ```
 
-    or
+    or using pipx
 
     ```bash
-    pip install poetry
+    pipx install poetry
     ```
 
     Make sure to add Poetry to your system's PATH environment variable if necessary. You can verify the installation by running `poetry --version`.
 
-2.  **Clone the Repository:** Clone your project repository from GitHub to your local machine:
+3.  **Clone the Repository:** Clone your project repository from GitHub to your local machine:
 
     ```bash
     git clone <your_repository_url>
@@ -53,7 +53,7 @@ Before you begin, ensure you have the following installed:
 
     Replace `<your_repository_url>` with the actual URL of your GitHub repository and `<your_project_directory>` with the name of the cloned directory.
 
-3.  **Install Dependencies:** Navigate to the project directory (where the `pyproject.toml` file is located) and run the following command to install all the project dependencies:
+4.  **Install Dependencies:** Navigate to the project directory (where the `pyproject.toml` file is located) and run the following command to install all the project dependencies:
 
     ```bash
     poetry install
