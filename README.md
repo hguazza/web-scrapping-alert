@@ -18,7 +18,7 @@ This guide will walk you through the steps to set up and replicate this project 
 
 1. **requests**: Used to make HTTP requests and fetch HTML from web pages.
 2. **BeautifulSoup (bs4)**: Used to parse and extract specific information from the page's HTML, such as the product price.
-3. **time**: A library for scheduling tasks, allowing price checks at regular intervals.
+3. **time**: A library that allow us to get timestamp and to set regular time intervals.
 4. **pandas**: Makes data manipulation easier, allowing saving and loading of price history in CSV files.
 5. **sqlite3**: A lightweight SQLite database used to store and organize price data over time.
 6. **python-telegram-bot**: A library for sending messages to Telegram, notifying the user when the price hits a specific value.
